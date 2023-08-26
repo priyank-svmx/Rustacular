@@ -45,4 +45,9 @@ fn main() {
     let x: Attend = Attend::Late(15);
     let boxx = Box::new(x);
     println!("printing Box.Attend {:?}", boxx);
+
+    let int_val = 12_i8;
+    println!("printing 12_i8 {}", int_val);
+
+    println!("so the abs type is {:?}", (-4_i32).abs());
 }
