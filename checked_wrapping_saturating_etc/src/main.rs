@@ -8,6 +8,8 @@ fn main() {
 
     //    checkedOperation();
     checkingCheckedOperation();
+    testing_string_functions();
+    testing_pointers_rust();
 }
 
 fn checkedOperation() {
@@ -41,4 +43,33 @@ fn checkingCheckedOperation() {
     //the bool type
     assert_eq!(false as i32, 0);
     assert_eq!(true as i32, 1);
+
+    //
+    assert_eq!('*' as i32, 42);
+}
+
+fn testing_string_functions() {
+    let text = "some text which is given to be split";
+    let (head, tail) = text.split_at(20);
+
+    println!("head is {}", head);
+    println!("tail is {}", tail);
+}
+
+fn testing_pointers_rust() {
+    let mut num = 78_u32;
+    // let pointer: &u32 = &num;
+    let pointer_mut: &mut u32 = &mut num;
+
+    *pointer_mut = 788_u32;
+    println!("printing the pointer {}", *pointer_mut);
+
+    //lets box the values
+    let num_box = Box::new(num);
+    println!("printing the boxed values {}", num_box);
+
+    //checking boxed value using tuple
+    let some_tuple = (32, "elixer", 'r');
+    let boxed_val = Box::new(some_tuple);
+    println!("{:?}", boxed_val);
 }
